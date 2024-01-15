@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+:root {
+  --background: #0f0f1b;
+  --secundbround: #565a7550;
+  --text: #fafbf6;
+  --subtext: #c6b7be;
+  --accent: #565a75;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: solid 2px var(--accent);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  display: flex;
+  flex-direction: row;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.me p {
+  color: var(--subtext);
+  width: 300px;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-indent: 5px;
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.container2 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.lista {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  text-align: center;
+
+  background: var(--secundbround);
+  padding: 24px 32px;
+  border-radius: 8px;
+}
+
+.dia ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.dia li {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  list-style: none;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--accent);
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+button:hover {
+  background-color: var(--text);
+  color: var(--accent);
+}
+input {
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--text);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}

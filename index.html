@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lista de tarefas criada para ajudar no meu dia a dia"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To do List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="profile">
+        <div class="introduction">
+          <img src="img/img 01.jpeg" alt="Foto Perfil" />
+          <div class="me">
+            <h1>Matheus Salgado</h1>
+            <p>
+              Minha paixão está no desenvolvimento web,tenho conhecimento em Javascript,HTML e CSS. Além disso, mantenho um conhecimento de Mysql avançado.
+              Sou um solucionador de problemas e busco constantemente de formas criativas de resolver problemas.
+              Estou comprometido com o aprendizado contínuo e sempre aberto a colaborar em projetos inovadores.
+            </p>
+          </div>
+        </div>
+
+        <ul>
+          <li>
+            <a href="https://github.com/Msalgad0" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/matheus-salgado-519981210/"
+              target="_blank"
+              >Linkedin</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://open.spotify.com/playlist/2ZONg885GRx1XlgcsNVzLk?si=dd3ee659cecd4dcf"
+              target="_blank"
+              >Spotify</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://app.netlify.com/sites/costumeshoes/overview"
+              target="_blank"
+              >Netlify</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container2">
+      <h1 class="titulo">Lista de tarefas</h1>
+      <div class="lista">
+        <div class="dia" id="dia">
+          <h1>Dia</h1>
+          <input type="text" id="novoItem" placeholder="Novo item" />
+          <button onclick="adicionarItem()">+</button>
+
+          <ul class="items" id="listaDia"></ul>
+        </div>
+
+        <div class="dia" id="noite">
+          <h1>Noite</h1>
+          <input type="text" id="novoItemNoite" placeholder="Novo item" />
+          <button onclick="adicionarItemNoite()">+</button>
+
+          <ul class="items" id="listaNoite"></ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function adicionarItem() {
+        var novoItemTexto = document.getElementById("novoItem").value;
+        if (novoItemTexto !== "") {
+          var listaDia = document.getElementById("listaDia");
+          var novoItem = document.createElement("li");
+          novoItem.appendChild(document.createTextNode(novoItemTexto));
+          listaDia.appendChild(novoItem);
+          adicionarBotaoExcluir(novoItem);
+          document.getElementById("novoItem").value = "";
+        }
+      }
+
+      function adicionarItemNoite() {
+        var novoItemTexto = document.getElementById("novoItemNoite").value;
+        if (novoItemTexto !== "") {
+          var listaNoite = document.getElementById("listaNoite");
+          var novoItem = document.createElement("li");
+          novoItem.appendChild(document.createTextNode(novoItemTexto));
+          listaNoite.appendChild(novoItem);
+          adicionarBotaoExcluir(novoItem);
+          document.getElementById("novoItemNoite").value = "";
+        }
+      }
+
+      function adicionarBotaoExcluir(item) {
+        var botaoExcluir = document.createElement("button");
+        botaoExcluir.appendChild(document.createTextNode("Excluir"));
+        botaoExcluir.onclick = function () {
+          item.parentNode.removeChild(item);
+        };
+        item.appendChild(botaoExcluir);
+      }
+    </script>
+  </body>
+</html>
